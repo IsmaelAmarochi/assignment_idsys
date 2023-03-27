@@ -96,8 +96,14 @@ function PostList() {
             {selectedPost ? (
                 <div>
                     <Button variant="primary" onClick={handleClosePost}>Close</Button>
-                    <h2>{selectedPost.title}</h2>
-                    <p>{selectedPost.body}</p>
+                    <h3 className='mt-4'>Post</h3>
+                    <ListGroup className='mb-4'>
+                        <ListGroup.Item>
+                            <h2>{selectedPost.title}</h2>
+                            <p>{selectedPost.body}</p>
+                        </ListGroup.Item>
+                    </ListGroup>
+
                     <h3>Comments</h3>
                     <ListGroup>
                         {comments.map(comment => (
@@ -107,6 +113,7 @@ function PostList() {
                             </ListGroup.Item>
                         ))}
                     </ListGroup>
+                    
                 </div>
             ) : (
                 <div>
